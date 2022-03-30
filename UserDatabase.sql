@@ -12,9 +12,9 @@ entertainbudget double, otherbudget double, foreign key(username) references Acc
 create table Costs(username varchar(20), totalcosts double, budgetcosts double, foodcosts double,
 entertainmentcosts double, othercosts double, foreign key(username) references Accounts(username) on delete cascade);
 
-create table Transactions(username varchar(20), transaction_month date, total_budget double, bills_budget double, food_budget double, 
-entertainment_budget double, other_budget double, total_spent double, budget_spent double, food_spent double, 
-entertainment_spent double, other_spent double, unique(username, transaction_month), foreign key(username) 
+create table Transactions(username varchar(20), transactiondate date, totalbudget double, billsbudget double, foodbudget double, 
+entertainbudget double, otherbudget double, totalspent double, budgetspent double, foodspent double, 
+entertainspent double, otherspent double, unique(username, transactiondate), foreign key(username) 
 references Accounts(username) on delete cascade);
 
 insert into Accounts values("bob", "pass", "bob", 1234567890);
